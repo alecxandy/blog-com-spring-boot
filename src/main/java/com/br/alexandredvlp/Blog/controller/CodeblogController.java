@@ -2,7 +2,6 @@ package com.br.alexandredvlp.Blog.controller;
 
 import com.br.alexandredvlp.Blog.model.Post;
 import com.br.alexandredvlp.Blog.service.CodeblogService;
-import org.hibernate.annotations.common.reflection.XMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

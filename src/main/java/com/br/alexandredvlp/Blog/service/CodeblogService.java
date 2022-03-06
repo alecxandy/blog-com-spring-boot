@@ -11,4 +11,6 @@ public interface CodeblogService {
     Post findById(Long id);
 
     Post save(Post post);
+
+    void delete(Post post);
 }

@@ -14,6 +14,7 @@ public class CodeblogServiceImpl implements CodeblogService {
     @Autowired
     private CodeBlogRepository codeBlogRepository;
 
+
     @Override
     public List<Post> findAll() {
         return codeBlogRepository.findAll();
@@ -28,4 +29,11 @@ public class CodeblogServiceImpl implements CodeblogService {
     public Post save(Post post) {
         return codeBlogRepository.save(post);
     }
+
+    @Override
+    public void delete(Post post) {
+        codeBlogRepository.delete(post);
+    }
+
+
 }
