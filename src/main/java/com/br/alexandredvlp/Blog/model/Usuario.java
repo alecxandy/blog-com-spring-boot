@@ -3,9 +3,9 @@ package com.br.alexandredvlp.Blog.model;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Usuario implements UserDetails {
@@ -16,6 +16,21 @@ public class Usuario implements UserDetails {
     private String nomeCompleto;
 
     private String senha;
+
+
+    @ManyToMany
+    @JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "login"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "nomeRole"))
+    private List<Role> roleList;
+
+
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
+    }
 
     public String getLogin() {
         return login;
