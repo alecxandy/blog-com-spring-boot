@@ -21,11 +21,10 @@ public class CodeblogController {
     @Autowired
     private CodeblogService codeBlogService;
 
-    /*
     @RequestMapping("/")
-    public String index(){
-        return "index";
-    }*/
+    public String index() {
+        return "redirect:/posts";
+   }
 
     @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public ModelAndView getPost() {
