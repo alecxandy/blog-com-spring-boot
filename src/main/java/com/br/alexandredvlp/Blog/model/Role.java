@@ -1,6 +1,6 @@
 package com.br.alexandredvlp.Blog.model;
 
-import org.springframework.security.core.GrantedAuthority;
+
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,7 +8,7 @@ import javax.persistence.ManyToMany;
 import java.util.List;
 
 @Entity
-public class Role implements GrantedAuthority {//classe que classifica o controle de acesso ao usuario
+public class Role {//classe que classifica o controle de acesso ao usuario
 
     @Id
     private String nomeRole;
@@ -32,8 +32,4 @@ public class Role implements GrantedAuthority {//classe que classifica o control
         this.nomeRole = nomeRole;
     }
 
-    @Override
-    public String getAuthority() {
-        return null;
-    }
 }
